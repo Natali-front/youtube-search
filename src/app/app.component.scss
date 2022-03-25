@@ -1,0 +1,18 @@
+.container {
+    width: 90%;
+    margin: .5rem 2rem;
+    padding: .5rem .5rem
+}
+header {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: .5rem auto;
+}
+
+@media screen and (max-width: 414px) and (min-width:390px) {
+    .container{
+        margin: 0.5rem auto;
+    }
+}
