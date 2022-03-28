@@ -1,5 +1,11 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, EventEmitter, Output, OnInit } from '@angular/core';
+import { SearchService } from '../services/search.service';
+
+
+export interface Video {
+  id: number
+  videoId: any
+}
 
 @Component({
   selector: 'app-search',
@@ -7,29 +13,34 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./search.component.scss']
 })
 
-export class SearchComponent{
-  videos = [];
-  userReq:string = '';
+export class SearchComponent {
+
+  @Output() onAdd: EventEmitter<Video> = new EventEmitter<Video>()
+
+  videos: Video[] = []
+  event: any;
   response: any;
-  
-  
-  constructor(private http: HttpClient) {
+  videoId: any;
+
+
+  constructor(public searchService: SearchService) {
 
   }
-     search(event:any) {
-      event.preventDefault()
-      const userReq = event.target.value
-      const apiKey = 'AIzaSyDCFEcJp4-J6fZO6OGhg387fDsaIlDb90k'
-      
-         this.http.get(`https://www.googleapis.com/youtube/v3/search?q=${userReq}&title=snippet&order=videoCount&maxResults=12&type=video&key=${apiKey}`)
+  ngOnInit(): void {
+
+  }
+  search(event: any) {
+    this.searchService.search(event)
       .subscribe((response) => {
         this.response = response
-        this.videos = this.response.items.map((item:any) => item.id.videoId)
-        }) 
-      
-      
-        
-      
+        this.videos = this.response.items.map((item: any) => item.id.videoId)
+        for (let i = 0; i < this.videos.length; i++) {
+          const video: Video = {
+            id: 1 + i,
+            videoId: this.videos[i]
+          }
+          this.onAdd.emit(video)
+        }
+      })
   }
-
-}
+};

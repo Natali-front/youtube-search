@@ -1,6 +1,5 @@
 <div class="container">
-    <app-search></app-search>
+    <app-search (onAdd)="updateVideos($event)"></app-search>
+    <app-card *ngFor="let video of videos" [video]="video"
+    ></app-card>
 </div>
-
-
-
