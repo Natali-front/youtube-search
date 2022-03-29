@@ -20,7 +20,7 @@ export class SearchService {
 
   search(event: any): Observable<Video[]> {
     const request = event.target.value
-    return this.http.get<Video[]>(`https://www.googleapis.com/youtube/v3/search?q=${request}&title=snippet&order=videoCount&maxResults=18&type=video&key=${environment.apiKey}`)
+    return this.http.get<Video[]>(`https://www.googleapis.com/youtube/v3/search?q=${request}&title=snippet&order=videoCount&maxResults=21&type=video&key=${environment.apiKey}`)
 
   }
 };

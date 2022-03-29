@@ -36,7 +36,7 @@ export class SearchComponent {
         this.videos = this.response.items.map((item: any) => item.id.videoId)
         for (let i = 0; i < this.videos.length; i++) {
           const video: Video = {
-            id: 1 + i,
+            id: i + 1,
             videoId: this.videos[i]
           }
           this.onAdd.emit(video)
