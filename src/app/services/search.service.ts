@@ -11,7 +11,8 @@ import { Video } from '../search/search.component';
 
 export class SearchService {
   videos: Video[] = [];
-  event: any
+  event: any;
+  
 
 
   constructor(private http: HttpClient) {
@@ -21,6 +22,6 @@ export class SearchService {
   search(event: any): Observable<Video[]> {
     const request = event.target.value
     return this.http.get<Video[]>(`https://www.googleapis.com/youtube/v3/search?q=${request}&title=snippet&order=videoCount&maxResults=21&type=video&key=${environment.apiKey}`)
-
+    
   }
 };

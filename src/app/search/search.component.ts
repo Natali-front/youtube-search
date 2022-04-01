@@ -33,14 +33,13 @@ export class SearchComponent {
     this.searchService.search(event)
       .subscribe((response) => {
         this.response = response
-        this.videos = this.response.items.map((item: any) => item.id.videoId)
-        for (let i = 0; i < this.videos.length; i++) {
-          const video: Video = {
-            id: i + 1,
-            videoId: this.videos[i]
+        this.videos = this.response.items.map((item: any) => {
+          const video = {
+            id: this.response.items.indexOf(item) + 1,
+            videoId: item.id.videoId
           }
           this.onAdd.emit(video)
-        }
+        })
       })
   }
 };
