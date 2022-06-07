@@ -7,6 +7,9 @@ import { SafePipe } from 'src/app/pipes/safe.pipe';
 import { CardComponent } from './card/card.component';
 import { FormsModule } from '@angular/forms';
 import { FavoriteComponent } from './favorite/favorite.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+
 
 
 
@@ -21,7 +24,8 @@ import { FavoriteComponent } from './favorite/favorite.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
