@@ -6,6 +6,7 @@ import { SearchComponent } from './search/search.component';
 import { SafePipe } from 'src/app/pipes/safe.pipe';
 import { CardComponent } from './card/card.component';
 import { FormsModule } from '@angular/forms';
+import { FavoriteComponent } from './favorite/favorite.component';
 
 
 
@@ -14,7 +15,8 @@ import { FormsModule } from '@angular/forms';
     AppComponent,
     SearchComponent,
     SafePipe,
-    CardComponent
+    CardComponent,
+    FavoriteComponent
   ],
   imports: [
     BrowserModule,
