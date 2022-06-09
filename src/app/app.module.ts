@@ -8,6 +8,8 @@ import { CardComponent } from './card/card.component';
 import { FormsModule } from '@angular/forms';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FavoriteCardComponent } from './favorite-card/favoriteCard.component';
+import { StylefavDirective } from './directives/stylefav.directive';
 
 
 
@@ -19,7 +21,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SearchComponent,
     SafePipe,
     CardComponent,
-    FavoriteComponent
+    FavoriteComponent,
+    FavoriteCardComponent,
+    StylefavDirective
   ],
   imports: [
     BrowserModule,

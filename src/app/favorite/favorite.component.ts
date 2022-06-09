@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {faCoffee } '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-favorite',
@@ -7,7 +7,7 @@ import {faCoffee } '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./favorite.component.scss']
 })
 export class FavoriteComponent implements OnInit {
-
+  faHeart = faHeart
   constructor() { }
 
   ngOnInit(): void {

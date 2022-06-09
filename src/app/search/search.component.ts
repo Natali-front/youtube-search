@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { SearchService } from '../services/search.service';
 
-
+let nextPageToken = null
 export interface Video {
   id: number
   videoId: any
@@ -14,7 +14,7 @@ export interface Video {
 })
 
 export class SearchComponent {
-
+  toggle = false
   @Output() onAdd: EventEmitter<Video> = new EventEmitter<Video>()
 
   videos: Video[] = []
@@ -24,7 +24,7 @@ export class SearchComponent {
 
 
   constructor(public searchService: SearchService) {
-
+    
   }
   ngOnInit(): void {
 
@@ -38,8 +38,27 @@ export class SearchComponent {
             id: this.response.items.indexOf(item) + 1,
             videoId: item.id.videoId
           }
+          
           this.onAdd.emit(video)
         })
+        nextPageToken = this.response.nextPageToken
+          console.log(nextPageToken)
       })
   }
+  // paginate(event: any) {
+  //   this.searchService.paginate(event)
+  //   .subscribe((response) => {
+  //     this.response = response
+  //     this.videos = this.response.items.map((item: any) => {
+  //       const video = {
+  //         id: this.response.items.indexOf(item) + 1,
+  //         videoId: item.id.videoId
+  //       }
+        
+  //       this.onAdd.emit(video)
+  //     })
+  //     nextPageToken = this.response.nextPageToken
+  //       console.log(nextPageToken)
+  //   })
+  // }
 };

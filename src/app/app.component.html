@@ -4,12 +4,20 @@
     </header>
    
     <main>
-        <div class="wrapper">
+        <div class="wrapper" (click)="saveToLocalStorage($event)">
             <app-card *ngFor="let video of videos" [video]="video"></app-card>
         </div>
-            
         <div class="wrapper-fav">
-            <app-favorite></app-favorite>
+            <app-favorite>
+                
+            </app-favorite>
+            <!-- <app-favoritecard *ngFor="let favorite of favorites" [favorite]="favorite"> -->
+             
+            <!-- </app-favoritecard> -->
+            <app-favoriteCard 
+            *ngFor="let favorite of favorites"
+            [favorite]="favorite"
+            ></app-favoriteCard>
         </div>
             
         
