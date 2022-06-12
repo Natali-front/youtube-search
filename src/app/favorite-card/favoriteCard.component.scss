@@ -1,0 +1,39 @@
+.option-block{
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+.btn-delete {
+    width: 4rem;
+    height: 2rem;
+    border-radius: 5px;
+    background-color: rgb(18, 15, 10);
+    cursor: pointer;
+}
+&:hover {
+    box-shadow: inset;
+}
+.btn-delete svg {
+    width: 12px;
+    height: 12px;
+}
+}
+.svg-inline--fa.fa-circle-down {
+    margin-right: 14rem;
+}
+.svg-inline--fa.fa-circle-down:hover, .svg-inline--fa.fa-circle-up:hover {
+    cursor: pointer;
+    box-shadow: orange;
+}
+.svg-inline--fa{
+    width: 20px;
+    height: 20px;
+}
+.svg-inline--fa:hover {
+    cursor: pointer;
+    box-shadow: inset;
+}
+.svg-inline--fa.fa-heart:hover {
+    color:red;
+}
+

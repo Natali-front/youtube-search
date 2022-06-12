@@ -2,28 +2,17 @@
     <header>
         <app-search (onAdd)="updateVideos($event)"></app-search>
     </header>
-   
+
     <main>
-        <div class="wrapper" (click)="saveToLocalStorage($event)">
-            <app-card *ngFor="let video of videos" [video]="video"></app-card>
+        <div class="wrapper">
+            <app-card *ngFor="let video of videos" [video]="video" (onAdd)="updateFavorites($event)"></app-card>
         </div>
         <div class="wrapper-fav">
-            <app-favorite>
-                
-            </app-favorite>
-            <!-- <app-favoritecard *ngFor="let favorite of favorites" [favorite]="favorite"> -->
-             
-            <!-- </app-favoritecard> -->
-            <app-favoriteCard 
-            *ngFor="let favorite of favorites"
-            [favorite]="favorite"
-            ></app-favoriteCard>
+            <app-favorite></app-favorite>
+            <app-favoriteCard *ngFor="let favorite of favorites" [favorite]="favorite"></app-favoriteCard>
         </div>
-            
-        
-        
     </main>
-    
-    
-    
+
+
+
 </div>
