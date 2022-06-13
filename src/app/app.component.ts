@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { SearchService } from './services/search.service';
 import { Video } from './search/search.component';
-// import { Favorite } from './favorite-card/favoriteCard.component';
+
 
 export interface Favorite {
   id:any
@@ -16,6 +16,7 @@ export interface Favorite {
 export class AppComponent implements OnInit {
   videos: Video[] = []
   favorites: Favorite[] = []
+  
 
 
   constructor(public searchService: SearchService) {
@@ -29,4 +30,5 @@ export class AppComponent implements OnInit {
   updateFavorites(favorite: Favorite) {
     this.favorites.unshift(favorite)
   }
+  
 };

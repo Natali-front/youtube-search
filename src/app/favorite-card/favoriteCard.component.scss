@@ -7,7 +7,7 @@
     width: 4rem;
     height: 2rem;
     border-radius: 5px;
-    background-color: rgb(18, 15, 10);
+    background-color: rgb(224, 204, 169);
     cursor: pointer;
 }
 &:hover {
@@ -18,22 +18,18 @@
     height: 12px;
 }
 }
-.svg-inline--fa.fa-circle-down {
-    margin-right: 14rem;
-}
-.svg-inline--fa.fa-circle-down:hover, .svg-inline--fa.fa-circle-up:hover {
-    cursor: pointer;
-    box-shadow: orange;
-}
-.svg-inline--fa{
-    width: 20px;
-    height: 20px;
-}
-.svg-inline--fa:hover {
-    cursor: pointer;
-    box-shadow: inset;
-}
-.svg-inline--fa.fa-heart:hover {
-    color:red;
-}
-
+// .svg-inline--fa {
+//     margin-right: 14rem;
+//     width: 20px;
+//     height: 20px;
+// }
+// .svg-inline--fa:hover {
+//     cursor: pointer;
+//     box-shadow: orange;
+// }
+// .ng-fa-icon:hover {
+//     color:red;
+// }
+// .svg-inline--fa.fa-circle-arrow-up{
+//     margin: 10px;
+// }
