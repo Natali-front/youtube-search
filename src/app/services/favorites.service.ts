@@ -17,20 +17,20 @@ export class FavoritesService {
   }
   deleteFavoriteElem(event: any) {
     const deleteFavoriteObservable = new Observable((observer) => {
-      observer.next(event.path[2].id)
+      observer.next()
     })
     return deleteFavoriteObservable
   }
-  moveElemUp() {
-
-  }
-  moveElemDown() {
-
+  moveElemFav() {
+    const moveElemFavObservable = new Observable((observer)=>{
+      observer.next()
+    })
+    return moveElemFavObservable
   }
   deleteAllFavorites() {
-    if (this.favorites.length > 0) {
-
-    }
-    return
-  }
+    const deleteAllObservable = new Observable((observer) => {
+      observer.next()
+    })
+    return deleteAllObservable
+}
 }

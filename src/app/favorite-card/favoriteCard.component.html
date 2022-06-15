@@ -1,10 +1,10 @@
 <div class="video-favorite">
-    <div class="option-block">
-        <fa-icon [icon]="faCircleArrowUp"></fa-icon>
-        <fa-icon [icon]="faCircleArrowDown"></fa-icon>
-        <button  class="btn-delete"><fa-icon [icon]="faTrash" (click)="deleteFavorite()"></fa-icon></button>
+    <div class="option-block"  >
+        <fa-icon [icon]="faCircleArrowUp" id={{favorite.id}}></fa-icon>
+        <fa-icon [icon]="faCircleArrowDown" id={{favorite.id}}></fa-icon>
+        <button [id]="favorite.id" class="btn-delete"><fa-icon [icon]="faTrash"></fa-icon></button>
     </div>
-    <iframe  class="video" width="420" height="315" frameborder="0"
+    <iframe  class="video-fav" width="420" height="315" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
         [src]="'http://www.youtube.com/embed/'+favorite.id+'?autoplay=1?enablejsapi=1&origin=http://localhost:4200' | safe"></iframe>
 </div>

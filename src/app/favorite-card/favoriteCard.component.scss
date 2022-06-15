@@ -1,3 +1,16 @@
+.video-favorite {
+    border: 1px dotted darkgray;
+    margin-top: 1rem;
+    padding: 0 2rem 2rem;
+
+&:hover {
+    box-shadow: 1px 1px 1px;
+}
+.video-fav {
+    width: 100%;
+    height: 80%;
+    margin-top: 1rem;
+}
 .option-block{
     padding-top: 2rem;
     display: flex;
@@ -18,18 +31,20 @@
     height: 12px;
 }
 }
-// .svg-inline--fa {
-//     margin-right: 14rem;
-//     width: 20px;
-//     height: 20px;
-// }
-// .svg-inline--fa:hover {
-//     cursor: pointer;
-//     box-shadow: orange;
-// }
-// .ng-fa-icon:hover {
-//     color:red;
-// }
-// .svg-inline--fa.fa-circle-arrow-up{
-//     margin: 10px;
-// }
+.svg-inline--fa {
+    margin-right: 14rem;
+    padding: 1rem;
+    width: 20px;
+    height: 20px;
+}
+.svg-inline--fa:hover {
+    cursor: pointer;
+    box-shadow: orange;
+}
+.ng-fa-icon:hover {
+    color:red;
+}
+.svg-inline--fa.fa-circle-arrow-up{
+    margin: 10px;
+}
+}

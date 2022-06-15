@@ -9,8 +9,8 @@ import { FavoritesService } from '../services/favorites.service';
 
 @Component({
   selector: 'app-favoriteCard',
-  templateUrl: './favoritecard.component.html',
-  styleUrls: ['./favoritecard.component.scss']
+  templateUrl: './favoriteCard.component.html',
+  styleUrls: ['./favoriteCard.component.scss']
 })
 export class FavoriteCardComponent implements OnInit {
   @Input() favorite!: Favorite
@@ -22,13 +22,11 @@ export class FavoriteCardComponent implements OnInit {
   faTrash = faTrash
   constructor(public favoriteService: FavoritesService) {
   }
-  deleteFavorite() {
-
-
-  }
+  
   ngOnInit() {
+  
   }
-
+ 
 }
 
 
