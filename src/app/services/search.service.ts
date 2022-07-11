@@ -27,7 +27,6 @@ export class SearchService {
   }
 
   paginate(nextPageToken: any): Observable<Video[]> {
-   console.log(request)
     return this.http.get<Video[]>(`https://www.googleapis.com/youtube/v3/search?q=${request}&title=snippet&order=rating&quotaUser=100&maxResults=${amount}&type=video&key=${environment.apiKey}&pageToken=${nextPageToken}`)
   }
 }

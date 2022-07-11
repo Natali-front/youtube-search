@@ -22,7 +22,7 @@ export class FavoritesService {
     return deleteFavoriteObservable
   }
   moveElemFav() {
-    const moveElemFavObservable = new Observable((observer)=>{
+    const moveElemFavObservable = new Observable((observer) => {
       observer.next()
     })
     return moveElemFavObservable
@@ -32,5 +32,5 @@ export class FavoritesService {
       observer.next()
     })
     return deleteAllObservable
-}
+  }
 }

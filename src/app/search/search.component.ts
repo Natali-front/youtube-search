@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { SearchService } from '../services/search.service';
 
- let nextPageToken: any = null
+let nextPageToken: any = null
 export interface Video {
   id: number
   videoId: any
@@ -20,11 +20,9 @@ export class SearchComponent {
   event: any;
   response: any;
   videoId: any;
-  
-
 
   constructor(public searchService: SearchService) {
-    
+
   }
   ngOnInit(): void {
 
@@ -46,17 +44,17 @@ export class SearchComponent {
   }
   paginate() {
     this.searchService.paginate(nextPageToken)
-    .subscribe((response) => {
-      this.response = response
-      this.videos = this.response.items.map((item: any) => {
-        const video = {
-          id: this.response.items.indexOf(item) + 1,
-          videoId: item.id.videoId
-        }
-        this.onAdd.emit(video)
-      })
-      nextPageToken = this.response.nextPageToken
+      .subscribe((response) => {
+        this.response = response
+        this.videos = this.response.items.map((item: any) => {
+          const video = {
+            id: this.response.items.indexOf(item) + 1,
+            videoId: item.id.videoId
+          }
+          this.onAdd.emit(video)
+        })
+        nextPageToken = this.response.nextPageToken
         console.log(nextPageToken)
-    })
+      })
   }
 };
