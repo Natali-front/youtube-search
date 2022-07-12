@@ -13,9 +13,12 @@ import { FavoritesService } from '../services/favorites.service';
   styleUrls: ['./favoriteCard.component.scss']
 })
 export class FavoriteCardComponent implements OnInit {
-  @Input() favorite!: Favorite
-  @Output() onAdd: EventEmitter<Favorite> = new EventEmitter<Favorite>()
   favorites: Favorite[] = []
+  @Input() favorite!: Favorite
+  @Output() onMove: EventEmitter<any> = new EventEmitter<any>()
+  @Output() onUp: EventEmitter<any> = new EventEmitter<any>()
+  @Output() onDown: EventEmitter<any> = new EventEmitter<any>()
+  
 
   faCircleArrowDown = faCircleArrowDown
   faCircleArrowUp = faCircleArrowUp
@@ -26,7 +29,22 @@ export class FavoriteCardComponent implements OnInit {
   ngOnInit() {
   
   }
- 
+ deleteOne(event:any){
+    this.favoriteService.deleteFavoriteElem(event).subscribe(() => {
+    this.onMove.emit(this.favorite)
+    })
+ }
+ moveUp(event:any){
+  this.favoriteService.moveElemUp().subscribe(() => {
+  this.onUp.emit(this.favorite)
+  })
+  
+}
+ moveDown(event:any){
+  this.favoriteService.moveElemDown().subscribe(() => {
+  this.onDown.emit(this.favorite)
+  })
+ }
 }
 
 

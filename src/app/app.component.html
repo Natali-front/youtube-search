@@ -7,9 +7,9 @@
         <div class="wrapper">
             <app-card *ngFor="let video of videos" [video]="video" (onAdd)="updateFavorites($event)"></app-card>
         </div>
-        <div class="wrapper-fav" (click)="deleteFavorite($event)">
-            <app-favorite (click)="deleteAll($event)"></app-favorite>
-            <app-favoriteCard *ngFor="let favorite of favorites" [favorite]="favorite" (click)="moveElem($event)"></app-favoriteCard>
+        <div class="wrapper-fav">
+            <app-favorite (onDelete)="deleteFav($event)"></app-favorite>
+            <app-favoriteCard *ngFor="let favorite of favorites" [favorite]="favorite" (onMove)="moveElem($event)" (onUp)="moveUp($event)" (onDown)="moveDown($event)"></app-favoriteCard>
         </div>
     </main>
 </div>

@@ -33,4 +33,16 @@ export class FavoritesService {
     })
     return deleteAllObservable
   }
+  moveElemUp() {
+    const moveElemFavObservable = new Observable((observer) => {
+      observer.next()
+    })
+    return moveElemFavObservable
+  }
+  moveElemDown() {
+    const moveElemFavObservable = new Observable((observer) => {
+      observer.next()
+    })
+    return moveElemFavObservable
+  }
 }
