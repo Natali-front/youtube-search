@@ -1,25 +1,30 @@
-import { NgModule, Pipe } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
-import { SearchComponent } from './search/search.component';
-import { SafePipe } from 'src/app/pipes/safe.pipe';
-import { CardComponent } from './card/card.component';
 import { FormsModule } from '@angular/forms';
+import { SharedModule } from './shared/shared.module';
+import { CardModule } from './card/card.module';
+import { FavoriteCardModule } from './favorite-card/favoriteCard.module';
+import { SearchModule } from './search/search.module';
+import { FavoriteModule } from './favorite/favorite.module';
+
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    SearchComponent,
-    SafePipe,
-    CardComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    SharedModule,
+    CardModule,
+    FavoriteCardModule,
+    SearchModule,
+    FavoriteModule
   ],
   providers: [],
   bootstrap: [AppComponent]

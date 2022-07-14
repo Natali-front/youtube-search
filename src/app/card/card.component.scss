@@ -1,3 +1,14 @@
+.video-header {
+    min-height: 300px;
+    padding: 0.5rem;
+    border: 1px solid #000;
+    border-radius: 1px;
+    box-shadow: 3px 3px 3px;
+    box-sizing: content-box;
+    .svg-inline--fa.fa-heart:hover {
+        color:red;
+}
+}
 .video-wrapper {
     padding: 0.5rem;
     border: 1px solid #000;
