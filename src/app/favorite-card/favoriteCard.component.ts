@@ -18,33 +18,26 @@ export class FavoriteCardComponent implements OnInit {
   @Output() onMove: EventEmitter<any> = new EventEmitter<any>()
   @Output() onUp: EventEmitter<any> = new EventEmitter<any>()
   @Output() onDown: EventEmitter<any> = new EventEmitter<any>()
-  
+
 
   faCircleArrowDown = faCircleArrowDown
   faCircleArrowUp = faCircleArrowUp
   faTrash = faTrash
   constructor(public favoriteService: FavoritesService) {
   }
-  
+
   ngOnInit() {
-  
+
   }
- deleteOne(event:any){
-    this.favoriteService.deleteFavoriteElem(event).subscribe(() => {
+  deleteOne(event: any) {
     this.onMove.emit(this.favorite)
-    })
- }
- moveUp(event:any){
-  this.favoriteService.moveElemUp().subscribe(() => {
-  this.onUp.emit(this.favorite)
-  })
-  
-}
- moveDown(event:any){
-  this.favoriteService.moveElemDown().subscribe(() => {
-  this.onDown.emit(this.favorite)
-  })
- }
+  }
+  moveUp(event: any) {
+    this.onUp.emit(this.favorite)
+  }
+  moveDown(event: any) {
+     this.onDown.emit(this.favorite) 
+  }
 }
 
 

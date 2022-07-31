@@ -1,0 +1,13 @@
+.video-page{
+    width: 100%;
+    margin: 50px 0px 0px 20px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    .video-page-header{
+        height: 85%;
+        .video{
+            width: 80%;
+            height: 600px;
+        }
+    }
+}

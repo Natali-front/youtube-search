@@ -31,6 +31,7 @@ export class SearchComponent {
     this.searchService.search(event)
       .subscribe((response) => {
         this.response = response
+        console.log(this.response)
         this.videos = this.response.items.map((item: any) => {
           const video = {
             id: this.response.items.indexOf(item) + 1,

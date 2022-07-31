@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Favorite } from '../card/card.component';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class FavoritesService {
-  favorites: Favorite[] = []
+  private favorites: Favorite[] = []
   constructor() { }
 
   addFavoriteElem(event: any) {
@@ -40,9 +41,15 @@ export class FavoritesService {
     return moveElemFavObservable
   }
   moveElemDown() {
-    const moveElemFavObservable = new Observable((observer) => {
+      const moveElemFavObservable = new Observable((observer) => {
       observer.next()
     })
     return moveElemFavObservable
   }
+  getById(id:any) {
+    return this.favorites.find(f => f.id === id)
+  }
 }
+  
+
+

@@ -6,10 +6,10 @@ import { CommonModule } from "@angular/common";
 
 
 @NgModule({
-    declarations:[
+    declarations: [
         FavoriteCardComponent
     ],
-    imports:[
+    imports: [
         SharedModule,
         CommonModule
 

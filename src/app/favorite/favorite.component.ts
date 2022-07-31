@@ -20,8 +20,7 @@ export class FavoriteComponent implements OnInit {
       this.favoriteService.deleteAllFavorites().subscribe(() => {
         this.favorites.splice(0, this.favorites.length)
         this.onDelete.emit()
-      })
-    
+      })  
   }
   }
 

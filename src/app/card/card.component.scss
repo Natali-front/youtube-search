@@ -5,22 +5,33 @@
     border-radius: 1px;
     box-shadow: 3px 3px 3px;
     box-sizing: content-box;
-    .svg-inline--fa.fa-heart:hover {
-        color:red;
-}
+    .video-options{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .svg-inline--fa.fa-heart, .svg-inline--fa.fa-expand{
+            cursor: pointer;
+        }
+    }
+    
 }
 .video-wrapper {
     padding: 0.5rem;
     border: 1px solid #000;
     border-radius: 1px;
     box-shadow: 3px 3px 3px;
+   
     .video{
         width: 100%;
     }
     h3 {
     font-size: 1rem;
     margin: 0.5rem;
-}
+    } 
+&:hover{
+        border: 2px solid #000;
+        cursor: pointer;
+    }
 }
 @media screen and (max-width: 414px) and (min-width:390px) {
     .video-wrapper {

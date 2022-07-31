@@ -7,17 +7,17 @@ import { StylefavDirective } from "../directives/stylefav.directive";
 
 
 @NgModule({
-    declarations:[
-    SafePipe,
-    StylefavDirective
+    declarations: [
+        SafePipe,
+        StylefavDirective
     ],
-    exports:[
+    exports: [
         FontAwesomeModule,
         SafePipe,
         StylefavDirective
-       
+
     ]
-    
+
 })
 
 export class SharedModule {

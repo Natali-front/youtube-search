@@ -4,27 +4,26 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from './shared/shared.module';
-import { CardModule } from './card/card.module';
-import { FavoriteCardModule } from './favorite-card/favoriteCard.module';
-import { SearchModule } from './search/search.module';
-import { FavoriteModule } from './favorite/favorite.module';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeModule } from './home/home.module';
+import { VideoPageComponent } from './video-page/video-page.component';
+
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    VideoPageComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     SharedModule,
-    CardModule,
-    FavoriteCardModule,
-    SearchModule,
-    FavoriteModule
+    AppRoutingModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

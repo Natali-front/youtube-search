@@ -6,8 +6,12 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    h2 {
+    a {
         font-family: "Raleway", sans-serif;
+        font-weight: 700;
+        &:hover{
+            cursor: pointer;
+        }
     }
     input {
         width: 100%;
