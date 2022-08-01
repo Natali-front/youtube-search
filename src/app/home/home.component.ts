@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../services/search.service';
 import { FavoritesService } from '../services/favorites.service';
 import { Video } from '../search/search.component';
-export interface Favorite {
-  id: any
-}
+import { Favorite } from '../services/favorites.service';
+
 
 @Component({
   selector: 'app-home',
@@ -28,42 +27,30 @@ export class HomeComponent implements OnInit {
   updateFavorites(favorite: Favorite) {
     this.favorites.unshift(favorite)
   }
-  deleteFav(event: any) {
-    this.favoriteService.deleteAllFavorites().subscribe(() => {
-      this.favorites.splice(0, this.favorites.length)
-    })
+  deleteFav() {
+    this.favorites.splice(0, this.favorites.length)
   }
-  moveElem(event: any) {
-    this.favoriteService.moveElemFav().subscribe(() => {
-      this.favorites.splice(this.favorites.indexOf(event), 1)
-    })
+  moveElem(event:any) {
+    this.favorites.splice(this.favorites.indexOf(event), 1)
   }
 
   moveDown(event:any) {
-    this.favoriteService.moveElemDown().subscribe(()=> {
-       let index = this.favorites.indexOf(event)
-      if (index < this.favorites.length) {
-        this.favorites.splice(index, 1)
-        this.favorites.splice(index + 1, 0, event)
-      }
-      if (index === this.favorites.length) {
-        return
-      }
-    })
-     
-    
+    let index = this.favorites.indexOf(event)
+    if (index < this.favorites.length) {
+      this.favorites.splice(index, 1)
+      this.favorites.splice(index + 1, 0, event)
+    }
+    if (index === this.favorites.length) {
+      return
+    }
   }
   moveUp(event:any) {
-    console.log(this.favorites)
-    this.favoriteService.moveElemUp()
-    this.favoriteService.moveElemUp().subscribe(() => {
-      let index = this.favorites.indexOf(event)
-      if (index >= 1) {
-        this.favorites.splice(index, 1)
-        this.favorites.splice(index - 1, 0, event)
-      } else {
-        return
-      }
-    })
+    let index = this.favorites.indexOf(event)
+    if (index >= 1) {
+      this.favorites.splice(index, 1)
+      this.favorites.splice(index - 1, 0, event)
+    } else {
+      return
+    }
   }
 }

@@ -17,10 +17,8 @@ export class FavoriteComponent implements OnInit {
   ngOnInit(): void {
   }
   delete(){
-      this.favoriteService.deleteAllFavorites().subscribe(() => {
-        this.favorites.splice(0, this.favorites.length)
-        this.onDelete.emit()
-      })  
+      this.favoriteService.deleteAllFavorites()
+        this.onDelete.emit() 
   }
   }
 

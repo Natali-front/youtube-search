@@ -3,10 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
 import { Video } from '../search/search.component';
+import { OpenedVideo } from '../video-page/video-page.component'
 
 
 let amount = 9
 let request: any 
+let videoId: any
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +17,7 @@ let request: any
 export class SearchService {
   videos: Video[] = [];
   event: any;
+  chosenVideos: OpenedVideo[] = []
   
 
   constructor(private http: HttpClient) {
@@ -28,5 +31,9 @@ export class SearchService {
 
   paginate(nextPageToken: any): Observable<Video[]> {
     return this.http.get<Video[]>(`https://www.googleapis.com/youtube/v3/search?q=${request}&title=snippet&order=rating&quotaUser=100&maxResults=${amount}&type=video&key=${environment.apiKey}&pageToken=${nextPageToken}`)
+  }
+  openInfo(event:any): Observable<Video[]> {
+    videoId = event
+    return this.http.get<Video[]>(`https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${environment.apiKey}`)
   }
 }

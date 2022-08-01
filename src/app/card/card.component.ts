@@ -3,11 +3,10 @@ import { Router } from '@angular/router';
 import { Video } from '../search/search.component';
 import { faHeart, faExpand } from '@fortawesome/free-solid-svg-icons';
 import { FavoritesService } from '../services/favorites.service';
+import { SearchService } from '../services/search.service';
+import { Favorite } from '../services/favorites.service';
 
 
-export interface Favorite {
-  id: any
-}
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
@@ -19,18 +18,20 @@ export class CardComponent implements OnInit {
   @Input() video!: Video
   @Output() onAdd: EventEmitter<Favorite> = new EventEmitter<Favorite>()
   favorites: Favorite[] = []
+ 
 
-  constructor(public favoriteService: FavoritesService, private router: Router) {
+  constructor(public favoriteService: FavoritesService, private searchService: SearchService, private router: Router) {
 
   }
   addFavorite(event:any) {
-    this.favoriteService.addFavoriteElem(event).subscribe((result: any) => {
+    this.favoriteService.addFavoriteElem(event.path[2].id)
       const favorite: Favorite = {
-        id: result
+        id: event.path[2].id
       }
-      this.favorites.push(favorite)
       this.onAdd.emit(favorite)
-    })
+  }
+  addInfo(event:any){
+    this.searchService.openInfo(event)
   }
   ngOnInit(): void {
   }

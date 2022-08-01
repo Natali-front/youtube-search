@@ -2,7 +2,7 @@ import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 import { faCircleArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { faCircleArrowDown } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { Favorite } from '../app.component';
+import { Favorite } from '../services/favorites.service';
 import { FavoritesService } from '../services/favorites.service';
 
 
@@ -27,15 +27,18 @@ export class FavoriteCardComponent implements OnInit {
   }
 
   ngOnInit() {
-
+   
   }
-  deleteOne(event: any) {
+  deleteOne(event:any) {
+    this.favoriteService.deleteAllFavorites()
     this.onMove.emit(this.favorite)
   }
-  moveUp(event: any) {
+  moveUp(event:any) {
+    this.favoriteService.moveElemUp(event)
     this.onUp.emit(this.favorite)
   }
-  moveDown(event: any) {
+  moveDown(event:any) {
+    this.favoriteService.moveElemDown(event)
      this.onDown.emit(this.favorite) 
   }
 }

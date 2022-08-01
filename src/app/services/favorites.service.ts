@@ -1,53 +1,52 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Favorite } from '../card/card.component';
 
+
+export interface Favorite {
+  id: any
+} 
 
 @Injectable({
   providedIn: 'root'
 })
 export class FavoritesService {
-  private favorites: Favorite[] = []
+   favorites: Favorite[] = []
   constructor() { }
 
   addFavoriteElem(event: any) {
-    const favoriteObservable = new Observable((observer) => {
-      observer.next(event.path[2].id)
-    })
-    return favoriteObservable
+    console.log(event)
+      this.favorites.push(event)
   }
   deleteFavoriteElem(event: any) {
-    const deleteFavoriteObservable = new Observable((observer) => {
-      observer.next()
-    })
-    return deleteFavoriteObservable
+    this.favorites.splice(0, this.favorites.length)
   }
-  moveElemFav() {
-    const moveElemFavObservable = new Observable((observer) => {
-      observer.next()
-    })
-    return moveElemFavObservable
+  moveElemFav(event:any) {
+    this.favorites.splice(this.favorites.indexOf(event.id), 1)
   }
   deleteAllFavorites() {
-    const deleteAllObservable = new Observable((observer) => {
-      observer.next()
-    })
-    return deleteAllObservable
+    this.favorites.splice(0, this.favorites.length)
   }
-  moveElemUp() {
-    const moveElemFavObservable = new Observable((observer) => {
-      observer.next()
-    })
-    return moveElemFavObservable
+  moveElemUp(event:any) {
+      let index = this.favorites.indexOf(event.id)
+      if (index >= 1) {
+        this.favorites.splice(index, 1)
+        this.favorites.splice(index - 1, 0, event.id)
+      } else {
+        return
+      }
+      console.log(this.favorites)
   }
-  moveElemDown() {
-      const moveElemFavObservable = new Observable((observer) => {
-      observer.next()
-    })
-    return moveElemFavObservable
+  moveElemDown(event:any) {
+    let index = this.favorites.indexOf(event.id)
+    if (index < this.favorites.length) {
+      this.favorites.splice(index, 1)
+      this.favorites.splice(index + 1, 0, event.id)
+    }
+    if (index === this.favorites.length) {
+      return
+    }
   }
-  getById(id:any) {
-    return this.favorites.find(f => f.id === id)
+  getFavorite(){
+    return this.favorites
   }
 }
   

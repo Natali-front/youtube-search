@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output, OnInit, ViewChild, ElementRef } from '
 import { SearchService } from '../services/search.service';
 
 let nextPageToken: any = null
+
 export interface Video {
   id: number
   videoId: any
@@ -31,7 +32,6 @@ export class SearchComponent {
     this.searchService.search(event)
       .subscribe((response) => {
         this.response = response
-        console.log(this.response)
         this.videos = this.response.items.map((item: any) => {
           const video = {
             id: this.response.items.indexOf(item) + 1,
@@ -55,7 +55,6 @@ export class SearchComponent {
           this.onAdd.emit(video)
         })
         nextPageToken = this.response.nextPageToken
-        console.log(nextPageToken)
       })
   }
 };
