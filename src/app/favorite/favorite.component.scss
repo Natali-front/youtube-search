@@ -1,0 +1,36 @@
+
+.header-favorite {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    h2 {
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+    img {
+    width: 30px;
+    height: 30px;
+    position: absolute; 
+    left: 3%;
+    top: 4%;
+    overflow: hidden
+}
+
+.delete-list-btn {
+    width: 8rem;
+    height: 3rem;
+    border-radius: 5px;
+    background-color: rgb(243, 170, 82);
+    cursor: pointer;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+}
+.delete-list-btn svg {
+    margin-left: 5px;
+    width: 12px;
+    height: 12px;
+}
+}

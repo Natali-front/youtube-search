@@ -6,8 +6,12 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    h2 {
+    a {
         font-family: "Raleway", sans-serif;
+        font-weight: 700;
+        &:hover{
+            cursor: pointer;
+        }
     }
     input {
         width: 100%;
@@ -27,6 +31,20 @@
         height: 100px;
         overflow: hidden;
     }
+}
+.btn-load-more {
+    margin: 1rem auto;
+    padding: 5px 5px 10px;
+    width: 8rem;
+    height: 3rem;
+    border-radius: 5px;
+    background-color: rgb(243, 170, 82);
+    cursor: pointer;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    position: fixed;
+    bottom: 0;
 }
 @media screen and (max-width: 414px) and (min-width: 390px) {
     .search-wrapper {

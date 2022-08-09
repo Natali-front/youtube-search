@@ -1,0 +1,15 @@
+<div class="container">
+    <header>
+        <app-search (onAdd)="updateVideos($event)"></app-search>
+    </header>
+
+    <main>
+        <div class="wrapper">
+            <app-card *ngFor="let video of videos" [video]="video" (onAdd)="updateFavorites($event)"></app-card>
+        </div>
+        <div class="wrapper-fav">
+            <app-favorite (onDelete)="deleteFav()"></app-favorite>
+            <app-favoriteCard *ngFor="let favorite of favorites" [favorite]="favorite" (onMove)="moveElem($event)" (onUp)="moveUp($event)" (onDown)="moveDown($event)"></app-favoriteCard>
+        </div>
+    </main>
+</div>

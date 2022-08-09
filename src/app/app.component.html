@@ -1,9 +1,7 @@
-<div class="container">
-    <header>
-        <app-search (onAdd)="updateVideos($event)"></app-search>
-    </header>
-    <div class="video-list">
-        <app-card *ngFor="let video of videos" [video]="video"></app-card>
-    </div>
-    
+
+<div class="home" >
+   <a [routerLink]="['/']" class="home-link"><fa-icon [icon]="faHouse"></fa-icon></a>
 </div>
+
+<!-- <app-home></app-home> -->
+<router-outlet></router-outlet>

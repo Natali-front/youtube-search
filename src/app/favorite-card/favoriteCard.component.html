@@ -1,0 +1,12 @@
+<div class="video-favorite" >
+    <div class="option-block"  >
+        <button (click)="moveUp($event)" [id]="favorite.id"><fa-icon [icon]="faCircleArrowUp"></fa-icon></button>
+        <button (click)="moveDown($event)" [id]="favorite.id"><fa-icon [icon]="faCircleArrowDown"></fa-icon></button>
+        <button (click)="deleteOne($event)" [id]="favorite.id"><fa-icon [icon]="faTrash"></fa-icon></button>
+    </div>
+    <iframe  class="video-fav" width="420" height="315" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+        [src]="'http://www.youtube.com/embed/'+favorite.id+'?autoplay=1?enablejsapi=1&origin=http://localhost:4200' | safe"></iframe>
+</div>
+
+
