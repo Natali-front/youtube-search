@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { SearchService } from '../services/search.service';
 
 let nextPageToken: any = null
@@ -14,7 +15,8 @@ export interface Video {
   styleUrls: ['./search.component.scss']
 })
 
-export class SearchComponent {
+export class SearchComponent implements OnInit {
+
   toggle = false
   @Output() onAdd: EventEmitter<Video> = new EventEmitter<Video>()
   videos: Video[] = []
@@ -22,14 +24,15 @@ export class SearchComponent {
   response: any;
   videoId: any;
 
+  input = new FormControl('')
+
   constructor(public searchService: SearchService) {
 
   }
-  ngOnInit(): void {
-
+  ngOnInit() {
   }
-  search(event: any) {
-    this.searchService.search(event)
+  search(input: any) {
+    this.searchService.search(input)
       .subscribe((response) => {
         this.response = response
         this.videos = this.response.items.map((item: any) => {

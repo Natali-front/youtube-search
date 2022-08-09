@@ -7,8 +7,8 @@ import { OpenedVideo } from '../video-page/video-page.component'
 
 
 let amount = 9
-let request: any 
 let videoId: any
+let request: any
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +33,7 @@ export class SearchService {
     return this.http.get<Video[]>(`https://www.googleapis.com/youtube/v3/search?q=${request}&title=snippet&order=rating&quotaUser=100&maxResults=${amount}&type=video&key=${environment.apiKey}&pageToken=${nextPageToken}`)
   }
   openInfo(event:any): Observable<Video[]> {
-    videoId = event
+    videoId = event.target.value
     return this.http.get<Video[]>(`https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${environment.apiKey}`)
   }
 }

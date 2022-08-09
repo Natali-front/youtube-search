@@ -10,8 +10,6 @@ import { VideoPageComponent } from './video-page/video-page.component';
 
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
